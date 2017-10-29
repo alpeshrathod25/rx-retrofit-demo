@@ -1,6 +1,9 @@
 package connectingpixels.com.myapplication.network;
 
+import connectingpixels.com.myapplication.base.ErrorObject;
+import connectingpixels.com.myapplication.bridge.EventPublisher;
 import connectingpixels.com.myapplication.network.request.RequestBuilder;
+import connectingpixels.com.myapplication.network.response.MainResponse;
 import retrofit2.Response;
 
 /**
@@ -18,14 +21,14 @@ public class NetworkHelper {
     }
 
     public void callApi(){
-        ((RequestBuilder)ClientGenerator.getInstance().createService(RequestBuilder.class)).getList("Ah").enqueue(new CustomResponse<Response>() {
+        ((RequestBuilder)ClientGenerator.getInstance().createService(RequestBuilder.class)).getList("Ah").enqueue(new CustomResponse<MainResponse>() {
             @Override
-            public void onSuccess(Response response) {
+            public void onSuccess(MainResponse mainResponse) {
 
             }
 
             @Override
-            public void onError(Response response) {
+            public void onError(ErrorObject t) {
 
             }
         });

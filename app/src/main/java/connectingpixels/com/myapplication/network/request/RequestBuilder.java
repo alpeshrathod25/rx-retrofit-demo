@@ -2,6 +2,7 @@ package connectingpixels.com.myapplication.network.request;
 
 import java.util.Observable;
 
+import connectingpixels.com.myapplication.network.response.MainResponse;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.http.GET;
@@ -13,5 +14,5 @@ import retrofit2.http.Query;
 
 public interface RequestBuilder {
     @GET("weather?")
-    Call<Response> getList(@Query("q") String city);
+    Call<MainResponse> getList(@Query("q") String city);
 }
