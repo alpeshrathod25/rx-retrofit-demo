@@ -1,5 +1,6 @@
 package connectingpixels.com.myapplication;
 
+import connectingpixels.com.myapplication.base.ErrorObject;
 import connectingpixels.com.myapplication.presenter.MVPCallback;
 
 /**
@@ -9,5 +10,5 @@ import connectingpixels.com.myapplication.presenter.MVPCallback;
 public interface MainCallback extends MVPCallback {
     void setResponse(String response);
 
-    void setError(String error);
+    void setError(ErrorObject error);
 }

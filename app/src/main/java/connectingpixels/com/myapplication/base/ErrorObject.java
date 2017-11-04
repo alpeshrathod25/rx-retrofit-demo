@@ -8,15 +8,33 @@ import android.os.Parcelable;
  */
 
 public class ErrorObject implements Parcelable {
-    public ErrorObject(){
+    private String httpCode;
+    private String message;
+    public String status;
+    public String type;
+
+    public ErrorObject() {
 
     }
 
-    protected ErrorObject(Parcel in) {
+    public ErrorObject(String str, String str2) {
+        this.httpCode = str;
+        this.message = str2;
+    }
+
+    protected ErrorObject(Parcel parcel) {
+        this.httpCode = parcel.readString();
+        this.message = parcel.readString();
+        this.type = parcel.readString();
+        this.status = parcel.readString();
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeString(this.httpCode);
+        parcel.writeString(this.message);
+        parcel.writeString(this.type);
+        parcel.writeString(this.status);
     }
 
     @Override

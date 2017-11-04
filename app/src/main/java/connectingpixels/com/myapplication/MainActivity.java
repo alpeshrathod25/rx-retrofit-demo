@@ -3,6 +3,8 @@ package connectingpixels.com.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import connectingpixels.com.myapplication.base.ErrorObject;
+
 public class MainActivity extends AppCompatActivity implements MainCallback {
 
     MainPresenter mainPresenter;
@@ -46,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements MainCallback {
     }
 
     @Override
-    public void setError(String error) {
+    public void setError(ErrorObject error) {
 
     }
+
 }
